@@ -6,7 +6,7 @@ import mplcursors
 from babel.numbers import format_currency
 
 # Load Data
-file_path = "all_data.csv"
+file_path = "Dashboard/all_data.csv"
 
 try:
     all_data = pd.read_csv(file_path, parse_dates = ["order_purchase_timestamp"])
