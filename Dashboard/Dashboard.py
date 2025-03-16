@@ -16,7 +16,7 @@ def load_data(file_path):
         st.stop()
 
 # Panggil fungsi untuk memuat data
-file_path = "Dashboard/all_data.csv"
+file_path = "Dasahboard/all_data.csv"
 all_data = load_data(file_path)
 
 
