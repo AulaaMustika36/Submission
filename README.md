@@ -23,17 +23,26 @@ Asumsi file utama bernama `all_data.csv`.
     - Filter data berdasarkan Wilayah.
     - Filter data berdasarkan Kategori Produk.
     - Filter data berdasarkan Rentang Tanggal.
-2. **RFM Analysis**
-    - Top 5 pelanggan berdasarkan Recency dan Frequency.
-    - Rata-rata nilai Recency dan Frequency
-    - Top 10 pelanggan berdasarkan Monetary.
-    - Rata-rata nilai Monetary.
-3. **Pembatalan Pesanan per Wilayah**
-    - Visualisasi jumlah pembatalan berdasarkan Provinsi.
-4. **Produk dengan Pendapatan Tertinggi dan Terendah** 
-    - 10 produk teratas dan terbawah berdasarkan revenue.
-5. **Jumlah Transaksi per Bulan**
-    - Tren pembelian bulanan dari tahun 2016-2018.
+
+2. **Pendapatan Produk**
+    - 10 Kategori Produk dengan Pendapatan Tertinggi.
+    - 10 Kategori Produk dengan Pendapatan Terendah.
+
+3. **Jumlah Pesanan Per Bulan**
+    - Visualisasi jumlah pesanan per bulan untuk melihat pola pembelian dari tahun 2016-2018.
+
+4. **Distribusi Status Pesanan** 
+    - Visualisasi jumlah pesanan berdasarkan status pesananc(delivered, shipped, canceled, dll).
+
+5. **Wilayah dengan Pembatalan Tertinggi**
+    - Visualisasi jumlah pembatalan pesanan berdasarkan wilayah.
+    
+6. **RFM Analysis (Recency, Frequency, Monetary)**
+    - Rata-rata Recency, Frequency, dan Monetary untuk semua pelanggan
+    - Top 5 pelanggan berdasarkan Recency (Pelanggan terbaru berdasarkan hari sejak pembelian terakhir).
+    - Top 5 pelanggan berdasarkan Frequency (Pelanggan dengan jumlah transaksi terbanyak).
+    - Top 5 pelanggan berdasarkan Monetary (Pelanggan dengan total belanja tertinggi).
+
 
 ---
 
@@ -48,7 +57,7 @@ cd nama-folder
 
 **Buka folder proyek di lokal**
 
-Pindahkan semua file proyek (termasuk `dashboard.py` dan `all_data.csv`) ke dalam satu folder.
+Pindahkan semua file proyek (termasuk `Dashboard.py` dan `all_data.csv`) ke dalam satu folder.
 
 ### 2. **Aktifkan Environment**
 Buka Power Shell/Command Prompt/Terminal pada Visual Studio Code.
@@ -72,9 +81,9 @@ pip install streamlit pandas matplotlib seaborn babel mplcursors
 
 ### 5. **Jalankan Dashboard**
 ```bash
-streamlit run dashboard.py
+streamlit run Dashboard.py
 ```
-`dashboard` adalah nama file Python yang berisi kode dashboard.
+`Dashboard` adalah nama file Python yang berisi kode dashboard.
 
 ### 5. **Buka di browser**
 Secara default, Streamlit akan membuka localhost di browser seperti:
