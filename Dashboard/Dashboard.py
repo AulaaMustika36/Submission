@@ -6,12 +6,18 @@ import os
 from babel.numbers import format_currency
 
 # Load Data
+@st.cache_data
+def load_data(file_path):
+    if os.path.exists(file_path):
+        data = pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"])
+        return data
+    else:
+        st.error(f"File '{file_path}' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
+        st.stop()
+
+# Panggil fungsi untuk memuat data
 file_path = "all_data.csv"
-if os.path.exists(file_path):
-    all_data = pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"])
-else:
-    st.error("File 'all_data.csv' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
-    st.stop()
+all_data = load_data(file_path)
 
 
 # Streamlit App Configuration
