@@ -2,16 +2,17 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 from babel.numbers import format_currency
 
 # Load Data
 file_path = "all_data.csv"
-
-try:
+if os.path.exists(file_path):
     all_data = pd.read_csv(file_path, parse_dates=["order_purchase_timestamp"])
-except FileNotFoundError:
-    st.error(f"File '{file_path}' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
+else:
+    st.error("File 'all_data.csv' tidak ditemukan. Pastikan file tersebut ada di direktori yang benar.")
     st.stop()
+
 
 # Streamlit App Configuration
 st.set_page_config(page_title="E-Commerce Dashboard", layout="wide")
